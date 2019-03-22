@@ -1,0 +1,105 @@
+.todo-mvc {
+    background-color: #e4e1e1;
+    text-align: center;
+}
+
+.wrapper {
+    margin-top: 60px;
+}
+
+.todo-block {
+    width: 45%;
+    margin: 0 auto;
+    border: 1px solid;
+}
+
+.text-fields {
+    margin: 20px 0 0;
+}
+
+.field {
+    width: 100%;
+    border: none;
+    background: #e4e1e1;
+    height:17px;
+    border: 0;
+    width: calc(100% - 2px);
+    margin-left:1px;
+    box-shadow: -2px 3px 0px 0px #cccccc, 8px 10px 0px -7px #cccccc;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    &:focus {
+        outline: none;
+    }
+    &::after {
+        content: '';
+    }
+}
+
+.list-todos {
+    li {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #bdb1b1;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.list-statuses {
+    li {
+        display: inline-block;
+        padding-left: 20px;
+        min-width: 50px;
+        margin-right: 10px;
+        &.active {
+            border: 1px solid;
+            padding: 5px 10px;
+        }
+
+        a {
+            color: #000;
+            text-transform: capitalize;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*.list-statuses .active {
+    border: 1px solid;
+    padding: 5px 10px;
+}*/
+
+.todo-item {
+    /*display: flex;
+    justify-content: space-between;*/
+    position: relative;
+}
+
+.item-remove {
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.item-name {
+    margin-left: 10px;
+}
+
+.no-items {
+    padding: 20px;
+}
+
+
+
+/*a.item-remove::after {
+    color: #000;
+    content: "remove";
+}*/
