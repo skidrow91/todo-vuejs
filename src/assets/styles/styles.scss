@@ -1,24 +1,35 @@
 .todo-mvc {
-    background-color: #e4e1e1;
+    /*background-color: #e4e1e1;*/
     text-align: center;
+    background: linear-gradient(135deg, #EA5C54 0%, #bb6dec 100%);
+    perspective: 800px;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
 }
 
 .wrapper {
     margin-top: 60px;
 }
 
+.title {
+    margin: 10px 0;
+}
+
 .todo-block {
     width: 45%;
     margin: 0 auto;
     border: 1px solid;
+    background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+    color: #afb1be;
 }
 
 .text-fields {
-    margin: 20px 0 0;
+    margin: 10px 0 0;
 }
 
 .field {
-    width: 100%;
+    /*width: 100%;
     border: none;
     background: #e4e1e1;
     height:17px;
@@ -27,7 +38,21 @@
     margin-left:1px;
     box-shadow: -2px 3px 0px 0px #cccccc, 8px 10px 0px -7px #cccccc;
     -webkit-transition: box-shadow 0.3s;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;*/
+
+    color: #afb1be;
+    width: 100%;
+    margin-top: -2px;
+    background: #32364a;
+    left: 0;
+    /*padding: 10px 65px;*/
+    border-top: 2px solid #393d52;
+    border-bottom: 2px solid #393d52;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    font-family: 'Gudea', sans-serif;
+    box-shadow: none;
     &:focus {
         outline: none;
     }
@@ -62,7 +87,7 @@
         }
 
         a {
-            color: #000;
+            color: #afb1be;
             text-transform: capitalize;
             &:hover {
                 text-decoration: none;
@@ -77,27 +102,64 @@
 }*/
 
 .todo-item {
-    /*display: flex;
-    justify-content: space-between;*/
     position: relative;
+    font-size: 1.25em;
 }
 
 .item-remove {
-    color: #000;
+    color: #afb1be;
     position: absolute;
     top: 0;
     right: 10px;
+    &:hover {
+        color: #afb1be;
+    }
 }
 
 .item-name {
-    margin-left: 10px;
+    margin-bottom: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    left: 4px;
+    position: absolute;
+    top: 0;
+    width: 28px;
+    padding-left: 28px;
+
+    &::after {
+        border: 2px solid #fff;
+        border-top: none;
+        border-right: none;
+        content: "";
+        height: 6px;
+        left: 7px;
+        opacity: 0;
+        position: absolute;
+        top: 8px;
+        transform: rotate(-45deg);
+        width: 12px;
+    }
+}
+
+.item-chbox {
+    opacity: 0;
+    background: none;
+    visibility: unset;
+    &:checked + .item-name {
+        background-color: #66bb6a;
+        border-color: #66bb6a;
+    }
+    &:checked + .item-name:after {
+        opacity: 1;
+    }
 }
 
 .no-items {
     padding: 20px;
 }
-
-
 
 /*a.item-remove::after {
     color: #000;

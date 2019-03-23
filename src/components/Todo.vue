@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <h3 class="title">{{title}}</h3>
     <div class="todo-block">
+      <h3 class="title">{{title}}</h3>
       <div class="container">
         <div class="text-fields">
           <!-- <input type="text" class="field" v-on:keyup.enter="add($event.target.value)" /> -->
@@ -11,8 +11,8 @@
           <ul class="list-todos" v-if="activeItems.length">
             <li v-for="item in activeItems" :key="item.id">
               <div class="todo-item">
-                <input type="checkbox" v-bind:id="'item-'+item.id" v-model="item.isCompleted">
-                <label class="item-name" v-bind:for="'item-'+item.id">{{item.name}}</label>
+                <input type="checkbox" class="item-chbox" v-bind:id="'item-'+item.id" v-model="item.isCompleted">
+                <label class="item-name" v-bind:for="'item-'+item.id">&nbsp;&nbsp;&nbsp;{{item.name}}</label>
                 <a href="#" v-on:click="del(item.id)" class="item-remove"><font-awesome-icon icon="trash-alt" /></a>
               </div>
             </li>
@@ -31,7 +31,9 @@
             </ul>
           </div>
           <div class="clear-completed">
-            <button type="button" v-on:click="delCompleted()">Delete Completed</button>
+            <div class="clear-completed">
+              <button type="button" class="btn btn-outline-success" v-on:click="delCompleted()">Delete Completed</button>
+            </div>
           </div>
         </div>
       </div>
@@ -91,28 +93,7 @@
         currentStatus: 'all',
         newTodo: '',
         statuses: ['all', 'active', 'completed'],
-        todos: [
-          {
-            id: ++uid,
-            name: 'test1',
-            isCompleted: false
-          },
-          {
-            id: ++uid,
-            name: 'test2',
-            isCompleted: false
-          },
-          {
-            id: ++uid,
-            name: 'test3',
-            isCompleted: false
-          },
-          {
-            id: ++uid,
-            name: 'test4',
-            isCompleted: false
-          }
-        ]
+        todos: []
       }
     },
     computed: {
