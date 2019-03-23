@@ -12,7 +12,8 @@
             <li v-for="item in activeItems" :key="item.id">
               <div class="todo-item">
                 <input type="checkbox" class="item-chbox" v-bind:id="'item-'+item.id" v-model="item.isCompleted">
-                <label class="item-name" v-bind:for="'item-'+item.id">&nbsp;&nbsp;&nbsp;{{item.name}}</label>
+                <label class="custom-chbox" v-bind:for="'item-'+item.id"></label>
+                <span class="item-name">{{item.name}}</span>
                 <a href="#" v-on:click="del(item.id)" class="item-remove"><font-awesome-icon icon="trash-alt" /></a>
               </div>
             </li>

@@ -1,5 +1,7 @@
 # todo-mvc
 
+<img src="https://github.com/skidrow91/todo-vuejs/blob/master/todo-vuejs.png" width="600">
+
 ## Project setup
 ```
 yarn install

@@ -116,7 +116,7 @@
     }
 }
 
-.item-name {
+.custom-chbox {
     margin-bottom: 0;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -128,6 +128,7 @@
     top: 0;
     width: 28px;
     padding-left: 28px;
+    white-space: nowrap;
 
     &::after {
         border: 2px solid #fff;
@@ -148,13 +149,18 @@
     opacity: 0;
     background: none;
     visibility: unset;
-    &:checked + .item-name {
+    &:checked + .custom-chbox {
         background-color: #66bb6a;
         border-color: #66bb6a;
     }
-    &:checked + .item-name:after {
+    &:checked + .custom-chbox:after {
         opacity: 1;
     }
+}
+
+.item-name {
+    margin-left: 30px;
+    word-break: break-all;
 }
 
 .no-items {
